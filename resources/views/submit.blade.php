@@ -1,114 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('master')
 
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-            .documentation{
-                margin-left: 30px;
-            }
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-            .form-top {
-        width: 500px;
-        overflow: hidden;
-        padding: 0 0px 10px 15px;
-        background: #fff;
-        -moz-border-radius: 4px 4px 0 0; -webkit-border-radius: 4px 4px 0 0; border-radius: 4px 4px 0 0;
-        text-align: left;
-    }
-            .form-bottom {
-        width: 400px;
-        padding: 2px 2px 3px 2px;
-        background: #fff;
-        -moz-border-radius: 0 0 4px 4px; -webkit-border-radius: 0 0 4px 4px; border-radius: 0 0 4px 4px;
-        text-align: left;
-        }
-            
-        </style>
-    </head>
-    <body>
-        <div class="flex-center ">
-            <div class="form-top">
-            <section class="container">
-                <div class="form-bottom">
-            <h1>Package Changer</h1>
-            <form id='#defaultForm' method="get" action="copyfile">
-                {{csrf_field()}}
-                <div class="form-group">
-                    <p><label>Application Name:</label>
-                        <input type="text" name="appname" class="form-control input" value="" size="50" placeholder="appname"></p>
-                    <p><label>Package name:</label>
-                        <input type="text" name="parameter" class="form-control input" value="" size="50" placeholder="parameter"></p>
-                  </div>
-                <p><input class="btn btn-danger" type="submit" name="commit" value="submit"></p>
-            </form>
+@section('sidebar-up')
+        
+    <h2>Android Starter App generator </h2>
+    <div class="modal-body">
+        <form id='#defaultForm' method="get" action="copyfile">
+            {{csrf_field()}}
+            <div class="form-group">
+                <p><label>Application Name:</label>
+                    <input type="text" name="appname" class="form-control input" value="" size="50" placeholder="appname"></p>
+                <p><label>Package name:</label>
+                    <input type="text" name="parameter" class="form-control input" value="" size="50" placeholder="parameter"></p>
             </div>
-             </section>
+            @if (count($errors))
+
+            <div class="well well-sm" id="error">
+            <ul>
+
+              @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+              @endforeach
+
+            </ul>
             </div>
-        </div>
-        <div class='documentation'>
-        <div  class='container'>
-            <h2>mvvm-starter</h2>
-            <p>A starter project for Android MVVM Project with DataBinding Library</p>
+
+            @endif
+            <p><input class="btn btn-danger" type="submit" name="commit" value="submit"></p>
+        </form>
+</div>
+@stop
+
+ @section('sidebar-left')       
+<h2>mvvm-starter</h2>
+<p>A starter project for Android MVVM Project with DataBinding Library</p>
 
 
-<p>Libraries used :</p>
+<h4>Libraries used :</h4>
 
 <ul>
 <li>Retrofit <code>com.squareup.retrofit2:retrofit:2.1.0</code></li>
@@ -119,9 +46,10 @@
 <li>Android Libraries ( <code>appcompat</code>, <code>design support</code>, <code>data binding</code>, etc )</li>
 </ul>
 
-<h2></h2>
+@stop
 
-<p>Setup included :</p>
+@section('sidebar-right')
+<h4>Setup included :</h4>
 
 <ul>
 <li>Data Binding
@@ -179,7 +107,6 @@
 <li>Calendar Utils : Parse &amp; display Calendar object into various format</li>
 </ul></li>
 </ul>
-        </div>
-        </div>
-    </body>
-</html>
+       
+@stop
+
