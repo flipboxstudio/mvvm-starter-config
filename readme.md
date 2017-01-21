@@ -1,6 +1,6 @@
 ##Kickstart your Android Development
 
-This repository contains the source for [http://mvvm.flipbox.co.id]() : **an android app generator using MVVM as the main architecture.**
+This repository contains the source for [MVVM Starter Generator](http://mvvm.flipbox.co.id) : **an android app generator using MVVM as the main architecture.**
 
 Why using this generator? Simple, to remove you from the hassle of constructing a new project and moreover, we've added some common utilities function that you can use on your project.
 
@@ -18,4 +18,4 @@ Libraries used :
 --
 inspired from http://androidkickstartr.com and http://www.androidbootstrap.com
 
-for more detail please visit : [https://github.com/flipboxstudio/mvvm-starter](github link)
+for more detail please visit : [MVVM Starter Template](https://github.com/flipboxstudio/mvvm-starter)
