@@ -4,13 +4,13 @@
         
     <h2>Android Starter App generator </h2>
     <div class="modal-body">
-        <form id='#defaultForm' method="get" action="copyfile">
+        <form id='#defaultForm' method="get" action="copyfile" autocomplete="off">
             {{csrf_field()}}
             <div class="form-group">
                 <p><label>Application Name:</label>
-                    <input type="text" name="appname" class="form-control input" value="" size="50" placeholder="appname"></p>
+                    <input type="text" name="appname" class="form-control input" value="" size="50" placeholder="ApplicationName"></p>
                 <p><label>Package name:</label>
-                    <input type="text" name="parameter" class="form-control input" value="" size="50" placeholder="parameter"></p>
+                    <input type="text" name="parameter" class="form-control input" value="" size="50" placeholder="com.example.app"></p>
             </div>
             @if (count($errors))
 
